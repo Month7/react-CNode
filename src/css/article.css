@@ -1,0 +1,117 @@
+.main{
+    margin:20px auto;
+    width: 90%;
+    max-width: 1400px;
+    min-width:900px;
+    display: flex;
+  
+    justify-content: space-between;
+  }
+  .particulars-right{
+    width: 290px;
+  }
+  .particulars-right .title{
+    background-color: #f6f6f6;
+    padding: 10px;
+    border-radius: 3px 3px 0 0 ;
+  }
+  .author{
+    background-color: #ffffff;
+  }
+  .author-information{
+    display: flex;
+    padding-left:10px;
+    padding-top:10px;
+    padding-bottom:20px;
+  }
+  .author-information img{
+    width: 48px;
+    height: 48px;
+  }
+  .particulars-con{
+  
+  }
+  .particulars-con-header{
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 3px 3px 0 0;
+  }
+  .particulars-con-header p{
+    font-size: 22px;
+    font-weight: 700;
+    margin: 8px 0;
+    line-height: 130%;
+  }
+  .particulars-con-header p>span{
+    background: #80bd01;
+    padding: 2px 4px;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 12px;
+  }
+  .particulars-con-information{
+    display: flex;
+    justify-content: space-between;
+  }
+  .particulars-con-information span::before{
+    content: "*"
+  }
+  .particulars-collect-but{
+    cursor: pointer;
+    padding: 6px 12px;
+    background-color: #80bd01;
+    border-radius: 3px;
+    color: #ffffff;
+  }
+  .particulars-vessel{
+    border-top: 1px solid #e5e5e5;
+    padding: 10px;
+    background-color:#fff;
+  }
+  
+  .review-item{
+    margin-top:20px;
+    flex: 1;
+  }
+  .review-list{
+    background-color: #fff;
+    padding: 10px;
+    display: flex;
+    margin-bottom:1px;
+  }
+  .review-box{
+    flex: 1;
+  }
+  .header-img{
+    width:30px;
+    height:30px;
+    margin-right:10px;
+  }
+  .review-box-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .review-box-information{
+    display: flex;
+    align-items: center;
+  }
+  .review-box-information a{
+    margin:0 4px;
+    color: #08c;
+    text-decoration: none;
+  }
+  .review-box-information p.author{
+    padding:2px;
+    color: #fff;
+    background-color: #6ba44e;
+    font-size: 12px;
+  }
+  .review-box-fun{
+    display: flex;
+  }
+  .review-box-fun span.like{
+    /* width: 20px; */
+    height: 20px;
+    background-color: #f40;
+  }
