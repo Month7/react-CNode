@@ -1,0 +1,30 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  background: #fff;
+  height: 4rem;
+  border-top: 1px solid gray;
+  width: 100%;
+  display: flex;
+}
+
+.footerIcon{
+  display: block;
+  margin: 0.2rem;
+  padding: 0;
+}
+
+.footerNav {
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  text-decoration: none!important;
+  width: 25%;
+  font-size: 1.4rem;
+  padding: 0;
+  color: black;
+}
+
+.active {
+  color: #04c3e0;
+}

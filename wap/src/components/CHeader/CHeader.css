@@ -1,0 +1,23 @@
+.header{
+    /* background: rgb(4,170,224); */
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    padding: 0;
+    z-index: 99;
+    background: #fff;
+    border-bottom: 1px solid gray;
+  } 
+  .headerNav{
+    text-decoration: none!important;
+    color: black;
+    padding: 1rem;
+    line-height: 3rem;
+    margin: 0;
+    width: 16%;
+    text-align: center;
+  }
+  .active{
+    /* background: rgb(4,195,224); */
+    border-bottom: solid 0.3rem rgb(4,195,224);
+  }

@@ -1,5 +1,8 @@
 html {
-  background-color: #DDDDDD;
+  /* background-color: #DDDDDD; */
+}
+html{
+  height: 100%!important;
 }
 html,body,.app {
   height: 100%;

@@ -1,10 +1,10 @@
 import React from 'react';
-import './component.css'
+import styles from './component.css'
 
 const PostlistCount = ({list}) => {
     
     return (
-        <div className="count">
+        <div className={styles.count}>
             <div>
                 <i className="glyphicon glyphicon-eye-open"></i>{list.visit_count}
             </div>

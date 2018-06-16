@@ -1,17 +1,16 @@
-.list .author {
+.author {
   font-size: 12px;
   display: flex;
-  height: 4rem;
+  height: 4rem; 
 }
 
-.list .author a {
+.author a{
   color: black;
   text-decoration: none;
 }
 
-.list .author .author-image img {
+.authorImage {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
 }
-/*# sourceMappingURL=component.css.map */
