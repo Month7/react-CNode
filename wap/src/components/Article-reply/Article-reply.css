@@ -1,0 +1,66 @@
+
+.replies-li{
+    list-style-type: none;
+    border-bottom: 1px solid #eee;
+    height: auto;
+    min-height: 14rem;
+    padding: 2rem 1rem;
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 0.5rem;
+}
+.floor{
+    float: right;
+}
+.floor:after{
+    zoom: 1;
+    content: '';
+    clear: both;
+    display: block;
+    height: 0;
+    width: 0;
+}
+.reply{
+    float: left;
+    width: 100%;
+}
+.clearfix:after{
+    zoom: 1;
+    content: '';
+    clear: both;
+    display: block;
+    height: 0;
+    width: 0;
+}
+.reply:after{
+    zoom: 1;
+    content: '';
+    clear: both;
+    display: block;
+    height: 0;
+    width: 0;
+}
+.replies-side img{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+.replies-side{
+    float: left;
+    height: 100%;
+}
+.replies-content{
+   
+    padding-left: 3.5rem;
+    width: 100%;
+}
+.replies-content a{
+    color: #80bd01;
+}
+.replies-content img{
+    width: 100%;
+}
+
+.replies-txt{
+    min-height: 6rem;
+}

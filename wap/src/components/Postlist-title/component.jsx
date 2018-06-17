@@ -5,8 +5,7 @@ import styles from './component.css'
 const PostlistTitle = ({list}) => {
     return (
         <div className={styles.title}>
-            <Link to="/fdfd">{list.title}</Link>
-            {/* <router-link :to="{name:'article',params:{id:list.id}}">{{list.title}}</router-link> */}
+            <Link to={`/topic/${list.id}`}>{list.title}</Link>
         </div>
     )
 }

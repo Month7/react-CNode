@@ -1,9 +1,7 @@
 import React,{Component} from 'react';
 import Postlist from './Postlist/component';
-import axios from 'axios';
 import loadingGif from '../res/loading.gif'
-
-
+import {getApi} from '../utils/server'
 class Postlists extends Component{
     constructor(){
         super();
@@ -24,17 +22,14 @@ class Postlists extends Component{
         },10)
     }
     getData(tab=''){
-        axios({
-            url:`https://cnodejs.org/api/v1/topics/?tab=${tab}`,
-            method:'get'
-        }).then((response)=>{
-            if(response.data.success === true){
-                this.setState({
-                    lists:response.data.data,
-                    loading: false
-                })
-            }
-        })
+        let url = `/topics/?tab=${tab}`;
+        const success = (data) =>{
+            this.setState({
+                lists:data.data,
+                loading: false
+            })
+        }
+        getApi(url,'get',success);
     }
     render(){
         var lists = this.state.lists;
