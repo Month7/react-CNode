@@ -1,27 +1,34 @@
 import React from 'react';
 import {
-    HashRouter,
+    BrowserRouter,
     Route,
     Switch,
+    Redirect
 } from 'react-router-dom';
 import Index from './pages/Index';
 import Message from './pages/Message';
 import CFooter from './components/CFooter/CFooter';
-import Article from './components/Article/Article';
+import Login from './components/Login/Login';
+import Article from './components/Article/Article'
 
 const RootRouter = () => {
+    var loggedIn = sessionStorage.getItem('accesstoken');
+    
     return (
-        <HashRouter>
+        <BrowserRouter basename="/">
             <div className="App">
                 <Switch>
-                    <Route exact strict path="/" component={Index}></Route>
-                    <Route exact strict path="/:tab" component={Index}></Route>
-                    <Route exact strict path="/message" component={Message}></Route>
-                    <Route exact strict path="/topic/:id" component={Article}></Route>
+                    <Route exact path="/" component={Index}></Route>
+                    <Route path="/tab=:tab" component={Index}></Route>
+                    <Route path="/message" render={() => (loggedIn === null ? (<Redirect to="/login"/>) : (<Message/>))} />
+                    {/* <Route path="/message" component={Message} /> */}
+                    <Route path="/topic/:id" component={Article}></Route>
+                    <Route path="/login" component={Login}></Route>
+                    <CFooter />
                 </Switch>
                 <CFooter />
             </div>
-        </HashRouter>
+        </BrowserRouter>
     )
 }
 

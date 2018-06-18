@@ -65,7 +65,7 @@ class Article extends Component{
                     共(<span>{reply.reply_count}</span>)条回复
                 </div>
                 <Replies lists={reply.replies} />
-                <MyReply id={reply.id}/>
+                <MyReply id={reply.id} getData={this.getData}/>
             </div>
         )
     }

@@ -1,10 +1,20 @@
-import React from 'react';
-const Message = ({match}) => {
-    return (
-        <div>
-            这是message页面
-        </div>
-    )
+import React,{Component} from 'react';
+import {Redirect} from 'react-router-dom';
+
+class Message extends Component{
+    constructor(){
+        super();
+    }
+    getData(){
+
+    }
+    render(){
+        return (
+            <div>
+                message
+            </div>
+        )
+    }
 }
 
 export default Message;

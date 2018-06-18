@@ -15,13 +15,13 @@ class MyReply extends Component{
         let id = this.props.id;
         let url = `/topic/${id}/replies`;
         const method = 'post';
+        //需改进
         const success = () => {
-            console.log(id);
+           window.location.reload();
         }
         let data = {
             content: this.state.txt,
-            
-            // accesstoken:sessionStorage.getItem('accesstoken'),
+            accesstoken:sessionStorage.getItem('accesstoken'),
         }
         getApi(url,method,success,data);
     }

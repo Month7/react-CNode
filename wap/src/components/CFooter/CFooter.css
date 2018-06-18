@@ -25,6 +25,17 @@
   color: black;
 }
 
+.footerNav:link,
+.footerNav:visited{
+  
+} 
+.footerNav:hover{
+  color: #04c3e0;
+}
+.footerNav:active{
+  color: #04c3e0;
+} 
+
 .active {
   color: #04c3e0;
 }
