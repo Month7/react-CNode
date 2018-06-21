@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {getApi} from '../../utils/server';
+import {$http} from '../../utils/util';
 import {NavLink} from 'react-router-dom';
 import styles from './Article.css';
 import MyReply from '../Article-myreply/Article-myreply';
@@ -27,7 +27,7 @@ class Article extends Component{
                 loading: false
             })
         }
-        getApi(url,method,success);
+        $http(url,method,success);
     }
     goBack(){
         this.props.history.goBack()  

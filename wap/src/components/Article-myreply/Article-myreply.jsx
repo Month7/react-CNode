@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import styles from './Article-myreply.css';
-import {getApi} from '../../utils/server';
+import {$http} from '../../utils/util';
 
 class MyReply extends Component{
     constructor(){
@@ -23,7 +23,7 @@ class MyReply extends Component{
             content: this.state.txt,
             accesstoken:sessionStorage.getItem('accesstoken'),
         }
-        getApi(url,method,success,data);
+        $http(url,method,success,data);
     }
     changeTxt(e){
         this.setState({

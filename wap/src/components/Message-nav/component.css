@@ -1,0 +1,15 @@
+.m-nav{
+    width: 50%;
+    display: block;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    height: 3rem;
+    line-height: 3rem;
+}
+.nav{
+    display: flex;
+    margin-top: 4rem;
+}
+.active{
+    border-bottom: 2px solid #80bd01;
+}

@@ -1,0 +1,56 @@
+.m-header{
+    position: fixed;
+    top:0;
+    width: 100%;
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    z-index: 99;
+    border-bottom: 1px solid #eee;
+}
+.m-content{
+    padding-top:4rem;   
+}
+.msg-m-content{
+    padding-left: 4rem;
+}
+
+.msg-m-content a{
+    display: block;
+    color: #80bd01;
+}
+.msg-username{
+    color: black!important;
+    font-weight: bold;
+}
+.m-li{
+    display: inline-block;
+    min-height: 10rem;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    padding: 0.5rem;
+}
+ul li{
+    list-style-type: none;
+}
+.m-avator{
+    float: left;
+    width: 3rem;
+    height: 100%;
+}
+.m-avator img{
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+}
+.m-content span{
+    width: 50%;
+    display: block;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    height: 3rem;
+    line-height: 3rem;
+}
+.m-content div:first-child{
+    display: flex;
+}

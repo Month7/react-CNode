@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './component.css'
+import { filterTime } from '../../utils/util'
 
 const PostlistCount = ({list}) => {
     
@@ -12,7 +13,7 @@ const PostlistCount = ({list}) => {
                 <i className="glyphicon glyphicon-comment"></i>{list.reply_count}
             </div>
             <div>
-                <i className="glyphicon glyphicon-time"></i>{list.create_at}
+                <i className="glyphicon glyphicon-time"></i>{filterTime(list.create_at)}
             </div>
         </div>
     )

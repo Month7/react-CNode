@@ -1,0 +1,13 @@
+.create-header{
+    height: 5rem;
+    position: fixed;
+    top:0;
+    width: 100%;
+    text-align: center;
+    line-height: 5rem;
+    border-bottom: 1px solid #eee;
+}
+.send{
+    position: absolute;
+    right: 1rem;
+}

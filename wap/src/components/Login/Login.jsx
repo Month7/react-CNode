@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import styles from './Login.css';
-import {getApi} from '../../utils/server';
+import {$http} from '../../utils/util';
 import {withRouter} from "react-router-dom";
 
 class Login extends Component{
@@ -27,12 +27,12 @@ class Login extends Component{
         const data = {
             accesstoken: this.state.accesstoken
         }
-        getApi(url,method,success,data);
+        $http(url,method,success,data);
     }
     render(){
         return (
             <div className={styles.login}>
-                <input type="text" placeholder="Access Token" className="token" onChange={this.inputChange}/>
+                <input type="text" placeholder="Access Token" className={styles.token} onChange={this.inputChange}/>
                 <div>
                     <button className="btn btn-success button" type="button" onClick={this.signin}>登录</button>
                 </div>

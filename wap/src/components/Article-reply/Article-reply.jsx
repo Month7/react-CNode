@@ -26,7 +26,6 @@ class Reply extends Component{
         var post = this.props.post;
         var index = this.props.index;
         var {showIndex,replyNum} = this.state;
-        console.log(this.state);
         return (
             <li className={styles.repliesLi}>
                 <div className={styles.reply}>

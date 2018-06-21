@@ -8,11 +8,11 @@ const PostlistAuthor = ({list,match}) => {
     return (
         <div className={styles.author}>
             <div>
-                <Link to=""><img className={styles.authorImage} src={list.author.avatar_url}/></Link>
+                <Link to={`/user/${list.author.loginname}`}><img className={styles.authorImage} src={list.author.avatar_url}/></Link>
             </div>
             <div>
                 <div>
-                    <Link to="">{list.author.loginname}</Link>
+                    <Link to={`/user/${list.author.loginname}`}>{list.author.loginname}</Link>
                 </div>
             </div>
         </div>

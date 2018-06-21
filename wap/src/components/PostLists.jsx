@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import Postlist from './Postlist/component';
 import loadingGif from '../res/loading.gif'
-import {getApi} from '../utils/server'
+import { $http } from '../utils/util'
 class Postlists extends Component{
     constructor(){
         super();
@@ -29,7 +29,7 @@ class Postlists extends Component{
                 loading: false
             })
         }
-        getApi(url,'get',success);
+        $http(url,'get',success);
     }
     render(){
         var lists = this.state.lists;
