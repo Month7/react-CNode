@@ -1,11 +1,12 @@
 import React,{Component} from 'react';
 import styles from './component.css';
+import UserInfoList from '../UserInfo-list/component'
 
 class UserInfoNav extends Component{
     constructor(){
         super();
         this.state = {
-            clicked: 'un_read'
+            clicked: 'recent_replies'
         }
         this.changeNav = this.changeNav.bind(this);
     }
@@ -17,13 +18,19 @@ class UserInfoNav extends Component{
         })
     }
     render(){
-        let unRead = this.state.clicked === 'un_read'?styles.active:'';
-        let Read = this.state.clicked === 'read'?styles.active:'';
+        let { clicked } = this.state;
+        let { recent_replies,recent_topics } = this.props;
         return (
-            <div className={styles.userButtons}>
-                <span className={`${styles.replyButtons} ${unRead}`} onClick={()=>{this.changeNav('un_read')}}>回复</span>
-                <span className={`${styles.replyButtons} ${Read}`} onClick={()=>{this.changeNav('read')}}>主题</span>
+            <div>
+                <div className={styles.userButtons}>
+                    <span className={`${styles.replyButtons}`} onClick={()=>{this.changeNav('recent_replies')}}>回复</span>
+                    <span className={`${styles.replyButtons}`} onClick={()=>{this.changeNav('recent_topics')}}>主题</span>
+                </div>
+                {clicked === 'recent_replies'? 
+                (<ul>{recent_replies.map((data,index) => (<UserInfoList data={data} key={index} />))}</ul>)
+                :(<ul>{recent_topics.map((data,index) => (<UserInfoList data={data} key={index} />))}</ul>)}
             </div>
+           
         )
     }
 } 

@@ -20,8 +20,10 @@ class Login extends Component{
     signin(){
         const url = '/accesstoken';
         const method = 'post';
-        const success = () => {
+        const success = (data) => {
             sessionStorage.setItem('accesstoken',this.state.accesstoken);
+            sessionStorage.setItem('loginname',data.loginname);
+            sessionStorage.setItem('userId',data.id);
             this.props.history.push("/");
         }
         const data = {

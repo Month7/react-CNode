@@ -12,12 +12,20 @@ class UserInfo extends Component{
             create_at: '',
             score: '',
             recent_topics: [],
-            recent_replies: []
+            recent_replies: [],
+            flag: 'recent_replies'
         }
         this.navCallback = this.navCallback.bind(this);
     }
     getData(){
-        let loginname = this.props.match.params.loginname;
+        var loginname;
+        if(this.props.match){
+            loginname = this.props.match.params.loginname;
+        }
+        else{
+            loginname = sessionStorage.getItem('loginname');
+        }
+
         let url = `/user/${loginname}`;
         const method = 'get';
         const success = (data) => {
@@ -31,16 +39,16 @@ class UserInfo extends Component{
             })
         }
         $http(url,method,success);
-        
     }
     componentDidMount(){
         this.getData();
     }
-    navCallback(){
-
+    navCallback(clicked){
+        this.getData();
     }
     render(){
         let { avatar_url,loginname,create_at,score,recent_topics,recent_replies } = this.state;
+        
         return (
             <div>
                 <UserInfoHeader 
@@ -48,8 +56,11 @@ class UserInfo extends Component{
                 loginname={loginname} 
                 create_at={create_at}
                 score={score}/>
-                <UserInfoNav navCallback={this.navCallback}/>
-                
+                <UserInfoNav 
+                navCallback={this.navCallback} 
+                recent_topics={recent_topics}
+                recent_replies={recent_replies} />
+
             </div>
         )
     }

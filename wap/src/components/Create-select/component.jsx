@@ -20,7 +20,9 @@ class CreateSelect extends Component{
         
         return (
             <div className={styles.createType}>
-               <select value={this.state.type} onChange={this.typeChange}>
+               <select style={{
+                   background: '#fff'
+               }} value={this.state.type} onChange={this.typeChange}>
                     <option value="">请选择</option>
                     <option value="share">分享</option>
                     <option value="ask">问答</option>

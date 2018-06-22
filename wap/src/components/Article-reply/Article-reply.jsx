@@ -26,6 +26,7 @@ class Reply extends Component{
         var post = this.props.post;
         var index = this.props.index;
         var {showIndex,replyNum} = this.state;
+        let id = this.props.id; 
         return (
             <li className={styles.repliesLi}>
                 <div className={styles.reply}>
@@ -53,7 +54,7 @@ class Reply extends Component{
                                 <p dangerouslySetInnerHTML={{__html:post.content}}></p>
                             </div>
                         </div>
-                        <ArticleButtons post={post} index={index} replyNum={replyNum} callBack={this.callBack}/>
+                        <ArticleButtons id={id} post={post} index={index} replyNum={replyNum} getData={this.props.getData} callBack={this.callBack}/>
                         {/* <div className={styles.repliesBottom}>
                             <span className="glyphicon glyphicon-share-alt" >回复</span>
                             <i className="glyphicon glyphicon-thumbs-up" ></i>{{post.ups.length}}

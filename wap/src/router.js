@@ -24,6 +24,7 @@ const RootRouter = () => {
                     <Route path="/message" render={() => (sessionStorage.getItem('accesstoken') === null ? (<Redirect to="/login"/>) : (<Message/>))} />
                     <Route path="/topic/:id" component={Article}></Route>
                     <Route path="/login" component={Login}></Route>
+                    <Route path="/me" render={() => (sessionStorage.getItem('accesstoken') === null ? (<Redirect to="/login"/>) : (<UserInfo/>))}></Route>
                     <Route path="/user/:loginname" component={UserInfo}></Route>
                     <Route path="/create" render={() => (sessionStorage.getItem('accesstoken') === null ? (<Redirect to="/login"/>) : (<Create/>))} />
                     <Route path="*" component={NotFoundPage}></Route>

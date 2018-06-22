@@ -35,7 +35,7 @@ class Article extends Component{
     render(){
         var { loading } = this.state;
         var reply = this.state.data;
-        
+        let id = this.props.match.params.id;
         if(loading){
             return (
                 <div></div>
@@ -64,7 +64,7 @@ class Article extends Component{
                 <div className={styles.articleCount}>
                     共(<span>{reply.reply_count}</span>)条回复
                 </div>
-                <Replies lists={reply.replies} />
+                <Replies lists={reply.replies} id={id}/>
                 <MyReply id={reply.id} getData={this.getData}/>
             </div>
         )

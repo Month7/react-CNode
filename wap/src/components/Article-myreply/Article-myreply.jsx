@@ -15,9 +15,12 @@ class MyReply extends Component{
         let id = this.props.id;
         let url = `/topic/${id}/replies`;
         const method = 'post';
-        //需改进
+        //需改进         
         const success = () => {
-           window.location.reload();
+        //    window.location.reload();
+            () => {
+                this.props.getData();
+            }
         }
         let data = {
             content: this.state.txt,
