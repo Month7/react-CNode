@@ -7,6 +7,8 @@
     z-index: 99;
     background: #fff;
     border-bottom: 1px solid gray;
+    position: fixed;
+    top:0;
   } 
   .headerNav{
     text-decoration: none!important;
@@ -18,6 +20,5 @@
     text-align: center;
   }
   .active{
-    /* background: rgb(4,195,224); */
     border-bottom: solid 0.3rem rgb(4,195,224);
   }

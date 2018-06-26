@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import styles from './component.css';
 import UserInfoList from '../UserInfo-list/component'
+import '../../common/common.css'
 
 class UserInfoNav extends Component{
     constructor(){

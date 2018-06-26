@@ -4,6 +4,7 @@ import {NavLink} from 'react-router-dom';
 import styles from './Article.css';
 import MyReply from '../Article-myreply/Article-myreply';
 import Replies from '../Article-replies/Article-replies';
+import loadingGif from '../../res/loading.gif';
 
 class Article extends Component{
     constructor(){
@@ -38,8 +39,11 @@ class Article extends Component{
         let id = this.props.match.params.id;
         if(loading){
             return (
-                <div></div>
+                <div className="loading">
+                    <img src={loadingGif} />
+                </div>
             )
+            
         }
         return (
             <div className={styles.article}>

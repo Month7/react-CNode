@@ -35,7 +35,7 @@ class Postlists extends Component{
         var lists = this.state.lists;
         if(this.state.loading){
             return (
-                <div className="">
+                <div className="loading">
                     <img src={loadingGif} />
                 </div>
             )
