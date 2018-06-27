@@ -1,0 +1,31 @@
+/*loading动画样式*/
+
+/* .state-loading .pull-load-footer-default i {
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.5rem;
+    width: 1em;
+    height: 1em;
+    border: 2px solid #9494b6;
+    border-top-color: #fff;
+    border-radius: 100%;
+    animation: circle .8s infinite linear;
+} */
+@keyframes circle {
+    100% {
+    transform: rotate(360deg);
+    }
+}
+.loadingGif{
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.5rem;
+    width: 2em;
+    height: 2em;
+    border: 2px solid #9494b6;
+    border-top-color: #fff;
+    border-radius: 100%;
+    animation: circle .8s infinite linear;
+}

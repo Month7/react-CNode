@@ -4,7 +4,7 @@ import styles from './CHeader.css';
 
 const CHeader = () => {
     return (
-        <div className={styles.header}>
+        <div className={styles.header} id="CHeader">
             <NavLink exact to="/"  className={styles.headerNav} activeClassName={styles.active}>全部</NavLink>
             <NavLink exact to="/tab=good" className={styles.headerNav} activeClassName={styles.active}>精华</NavLink>
             <NavLink exact to="/tab=share" className={styles.headerNav} activeClassName={styles.active}>分享</NavLink>

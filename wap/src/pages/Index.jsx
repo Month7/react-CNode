@@ -1,5 +1,5 @@
 import React from 'react';
-import PostLists from '../components/PostLists';
+import PostLists from '../components/PostLists/PostLists';
 import CHeader from '../components/CHeader/CHeader'
 const Index = ({match}) => {
     return (
