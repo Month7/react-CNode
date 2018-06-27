@@ -11,6 +11,7 @@ const CHeader = () => {
             <NavLink exact to="/tab=ask" className={styles.headerNav} activeClassName={styles.active}>问答</NavLink>
             <NavLink exact to="/tab=dev" className={styles.headerNav} activeClassName={styles.active}>测试</NavLink>
             <NavLink exact to="/tab=job" className={styles.headerNav} activeClassName={styles.active}>招聘</NavLink>
+            <NavLink exact to="/about" className={styles.headerNav} activeClassName={styles.active}>关于</NavLink>
         </div>
     )
 }

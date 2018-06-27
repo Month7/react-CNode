@@ -13,6 +13,7 @@ import Article from './components/Article/Article'
 import NotFoundPage from './pages/NotFoundPage';
 import Create from './pages/Create';
 import UserInfo from './pages/UserInfo';
+import AboutMe from './pages/About/AboutMe';
 
 const RootRouter = () => {
     return (
@@ -27,6 +28,7 @@ const RootRouter = () => {
                     <Route path="/me" render={() => (sessionStorage.getItem('accesstoken') === null ? (<Redirect to="/login"/>) : (<UserInfo/>))}></Route>
                     <Route path="/user/:loginname" component={UserInfo}></Route>
                     <Route path="/create" render={() => (sessionStorage.getItem('accesstoken') === null ? (<Redirect to="/login"/>) : (<Create/>))} />
+                    <Route path="/about" component={AboutMe}></Route>
                     <Route path="*" component={NotFoundPage}></Route>
                     <CFooter />
                 </Switch>
