@@ -9,11 +9,10 @@ class UserInfoHeader extends Component{
         this.goBack = this.goBack.bind(this);
     }
     goBack(){
-        // this.props.history.goBack()  
+        window.history.back(-1); 
     }
     render(){
         let { avatar_url,loginname,create_at,score,recent_topics,recent_replies } = this.props;
-        // console.log(this.props);
         return (
             <div>
                 <div className={styles.userHeader}>

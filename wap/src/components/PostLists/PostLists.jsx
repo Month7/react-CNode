@@ -49,9 +49,8 @@ class Postlists extends Component{
         var height = this.refs.container.height || this.refs.container.offsetHeight;
         // 距离顶部的距离
         var top = this.getScrollTop();
-        // var headerHeight = document.getElementById('CHeader').height || document.getElementById('CHeader').offsetHeight
-        // console.log(headerHeight);
-        if(this.diffY > 100 && top > height -700) {
+        // 此处应调整,不应写死为1000
+        if(this.diffY > 100 && top > height -1000) {
             this.setState({
                 loadMore: true
             })
@@ -82,7 +81,6 @@ class Postlists extends Component{
     render(){
         var { lists,loadMore } = this.state;
         var style = loadMore?{
-         
             height: '5rem',
             display: 'flex',
             justifyContent: 'center',

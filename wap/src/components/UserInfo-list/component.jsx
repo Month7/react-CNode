@@ -20,7 +20,7 @@ class UserInfoList extends Component{
                     {data.author.loginname}
                 </div>
                 <div className={styles.topicsTitle}>
-                    <Link to="">{data.title}</Link>
+                    <Link to={`/topic/${data.id}`}>{data.title}</Link>
                 </div>
             </li>
         )

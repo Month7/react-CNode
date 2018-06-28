@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import UserInfoHeader from '../components/UserInfo-header/component';
 import { $http } from '../utils/util';
 import UserInfoNav from '../components/UserInfo-nav/component';
+import loadingGif from '../res/loading.gif';
 
 class UserInfo extends Component{
     constructor(){
@@ -13,7 +14,8 @@ class UserInfo extends Component{
             score: '',
             recent_topics: [],
             recent_replies: [],
-            flag: 'recent_replies'
+            flag: 'recent_replies',
+            loading: true
         }
         this.navCallback = this.navCallback.bind(this);
     }
@@ -25,7 +27,6 @@ class UserInfo extends Component{
         else{
             loginname = sessionStorage.getItem('loginname');
         }
-
         let url = `/user/${loginname}`;
         const method = 'get';
         const success = (data) => {
@@ -35,7 +36,8 @@ class UserInfo extends Component{
                 create_at: data.data.create_at,
                 score: data.data.score,
                 recent_topics: data.data.recent_topics,
-                recent_replies: data.data.recent_replies
+                recent_replies: data.data.recent_replies,
+                loading: false
             })
         }
         $http(url,method,success);
@@ -47,8 +49,14 @@ class UserInfo extends Component{
         this.getData();
     }
     render(){
-        let { avatar_url,loginname,create_at,score,recent_topics,recent_replies } = this.state;
-        
+        let { avatar_url,loginname,create_at,score,recent_topics,recent_replies,loading } = this.state;
+        if(loading) {
+            return (
+                <div className="loading">
+                    <img src={loadingGif} />
+                </div>
+            )
+        }
         return (
             <div>
                 <UserInfoHeader 
