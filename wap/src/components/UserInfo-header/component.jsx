@@ -12,16 +12,16 @@ class UserInfoHeader extends Component{
         window.history.back(-1); 
     }
     render(){
-        let { avatar_url,loginname,create_at,score,recent_topics,recent_replies } = this.props;
+        let { avatar_url,loginname,create_at,score } = this.props;
         return (
             <div>
                 <div className={styles.userHeader}>
                     <span>个人资料</span>
                     <span className={styles.back} onClick={this.goBack}><i className="glyphicon glyphicon-chevron-left"></i></span>
                 </div>
-                <div className={styles.ss}>
+                <div className={styles.ss} style={{position:'relative'}}>
                     <div>
-                        <img className={styles.userImage} src={backgroundImg} />
+                        <img className={styles.userImage} src={backgroundImg} alt="背景图片" />
                     </div>
                     <div className={styles.userPortrait}>
                         <img src={avatar_url} alt="404?"/>

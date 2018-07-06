@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {$http} from '../../utils/util';
+import { $http } from '../../utils/util';
 import './component.css';
 import MessageList from '../Message-list/component';
 
@@ -27,7 +27,7 @@ class MessagUneread extends Component{
         let { messages } = this.state;
         if(messages.length === 0){
             return (
-                <li>没有消息</li>
+                <li style={{textAlign:'center'}}>没有消息</li>
             )
         }
         return (

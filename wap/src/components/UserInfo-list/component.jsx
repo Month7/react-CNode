@@ -3,9 +3,6 @@ import styles from './component.css';
 import { Link } from 'react-router-dom';
 
 class UserInfoList extends Component{
-    constructor(){
-        super();   
-    }
     render(){
         let { data } = this.props;
         if(data.length === 0){
