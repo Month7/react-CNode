@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import cnodejsSvg from '../cnodejs_light.svg';
 import {
     Link 
 } from 'react-router-dom'
@@ -10,7 +11,7 @@ class headerNav extends Component{
                 <div className="App-header-box">
                     <div className="header-left">
                         <Link to="/">
-                        <img src="http://o4j806krb.qnssl.com/public/images/cnodejs_light.svg" className="App-logo" alt="logo" />
+                        <img src={cnodejsSvg} className="App-logo" alt="logo" />
                         </Link>
                         <input className="search" type="text"/>
                     </div>
@@ -19,13 +20,13 @@ class headerNav extends Component{
                             <Link to="/test">测试</Link>
                         </li>
                         <li>
-                            <Link to="/">新手入门</Link>
+                            <Link to="/">我是傻逼</Link>
                         </li>
                         <li>
-                            <Link to="/">新手入门</Link>
+                            <Link to="/">我是傻逼</Link>
                         </li>
                         <li>
-                            <Link to="/">新手入门</Link>
+                            <Link to="/">我是傻逼</Link>
                         </li>
                     </ul>
                 </div>

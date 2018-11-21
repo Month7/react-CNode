@@ -28,9 +28,13 @@ class Login extends Component{
         }).then((response)=>{
             if(response.data.success === true){
                 sessionStorage.setItem('accesstoken',value);
+                sessionStorage.setItem('loginname',response.data.loginname);
+                sessionStorage.setItem('avatarUrl',response.data.avatar_url);
+                
                 this.setState({
                     isLogin:true
                 })
+                console.log('登录成功!');
             }
         })
     }

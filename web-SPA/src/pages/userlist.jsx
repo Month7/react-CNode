@@ -10,7 +10,8 @@ class UserList extends Component{
         }
     }
     getData(){
-        let loginname = this.props.match.params.loginname; 
+        let loginname = this.props.match.params.loginname || sessionStorage.getItem('loginname'); 
+        console.log(loginname);
         axios({
             url:`https://cnodejs.org/api/v1/user/${loginname}`,
             method:'get'
@@ -23,6 +24,7 @@ class UserList extends Component{
         })
     }
     componentDidMount(){
+        console.log('???');
         this.getData();
     }
     render(){
