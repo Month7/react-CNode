@@ -35,7 +35,7 @@ class UserInfo extends Component{
                 {(isLogin()||tabState === 1)?<div className="main-title">{tabState===1?'作者':'个人信息'}</div>:''}
                 {(isLogin()||tabState === 1)?<div className="author">
                 <div className="author-information">
-                    <Link to={`/user/${userData.loginname}`}><img src={userData.avatar_url} alt="" /></Link>
+                    <Link to={`/user/${userData.loginname}`}><img src={userData.avatar_url} alt="头像" /></Link>
                     <Link to={`/user/${userData.loginname}`}>{userData.loginname}</Link>
                   {/* <span>{userData.loginname}</span> */}
                 </div>

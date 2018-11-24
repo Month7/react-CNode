@@ -1,0 +1,31 @@
+.userAvatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+}
+.panel-header{
+    background-color: #f6f6f6;
+}
+.panel-content{
+    background-color: #fff;
+}
+.authorAcator{
+    border-radius: 3px;
+    width: 30px;
+    height: 30px;;
+}
+.recentCell{
+    background:#fff;
+    border-top: 1px solid #f0f0f0;
+    padding: 10px;
+    display: flex;
+}
+.panel-title{
+    color: #444;
+    padding: 10px;
+    border-radius: 3px 3px 0 0;
+}
+.panel-content{
+    margin-bottom: 20px;
+    padding: 10px;
+}

@@ -23,7 +23,6 @@ class Article extends Component{
             method:'get'
         }).then((response)=>{
             if(response.data.success === true){
-                console.log(response.data.data);
                 this.setState({
                     loading:false,
                     detials:response.data.data
