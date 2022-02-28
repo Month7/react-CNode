@@ -1,45 +1,37 @@
-import React,{Component} from 'react';
+import React,{Component, useEffect, useState} from 'react';
 import axios from 'axios';
 import '../css/article.css'
 import {tabText,formatPassTime} from '../utils/utilFun'
 import ArticleReplies from '../component/article-replies'
 import UserSideBar from '../component/userinfo'
 
-class Article extends Component{
-    constructor(){
-        super();
-        this.state = {
-            detials:{},
-            loading:true,
-        }
-    }
-    componentDidMount(){
-        this.getData();
-    }
-    getData(){
-        let id = this.props.match.params.id;
-        axios({
-            url:`https://cnodejs.org/api/v1/topic/${id}`,
-            method:'get'
-        }).then((response)=>{
-            if(response.data.success === true){
-                this.setState({
-                    loading:false,
-                    detials:response.data.data
-                })
-            }
-        }).catch((error)=>{
-            console.log(error)
-        })
-    }
-    render(){
-        const {detials} = this.state;
-        if(this.state.loading){
-            return (
-                <div>加载中...</div>
-            )
-        }
-        return (
+const getData = async (id) => {
+  const { data } = await axios.request({
+    url: `https://cnodejs.org/api/v1/topic/${id}`,
+  })
+  return data
+}
+
+const Article = (props) => {
+  const [detials, setDetials] = useState({})
+  const [loading, setLoading] = useState(true)
+ 
+  useEffect(() => {
+    const id = props.match.params.id;
+    (async () => {
+      const { data } = await getData(id)
+      setDetials(data)
+      setLoading(false)
+    })()
+  }, [])
+  if (loading) {
+    return (
+      <div>
+        loading
+      </div>
+    )
+  }
+          return (
             <div className="main">
                 <div className="main-left">
                     <div className="particulars-con">
@@ -71,7 +63,6 @@ class Article extends Component{
                 <UserSideBar tabState={1} userData={detials.author} loginname={detials.author.loginname}/>
             </div>
         )
-    }
 }
 
 export default Article
