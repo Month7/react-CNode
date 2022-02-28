@@ -11,6 +11,7 @@ const UserInfo = (props) => {
   const getData = async () => {
     
   }
+  return (<div></div>)
 }
 
 // class UserInfo extends Component{
