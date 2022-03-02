@@ -6,10 +6,11 @@ export const tabText = (tab = '',good = false,top = false) => {
         return '精华'
     }
     switch(tab){
-        case 'share': return '分享'; break;
-        case 'ask':   return '问答'; break;
-        case 'job':   return '招聘'; break;
-        case 'dev':   return '测试'; break;
+        case 'share': return '分享'; 
+        case 'ask':   return '问答'; 
+        case 'job':   return '招聘'; 
+        case 'dev':   return '测试';
+        default: return '分享'
     }
 }
 

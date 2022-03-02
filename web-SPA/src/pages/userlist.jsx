@@ -1,4 +1,4 @@
-import React,{Component} from 'react'
+import React,{Component, useEffect, useState} from 'react'
 import axios from 'axios'
 import '../css/userlist.css';
 import UserInfo from '../component/userinfo.jsx';
@@ -6,38 +6,30 @@ import {
     Link
 } from 'react-router-dom'
 
-class UserList extends Component{
-    constructor(props){
-        super();
-        this.state = {
-            loginname:props.loginname,
-            userData:{},
-            recentReplies:[],
-            recentTopics:[]
-        }
-    }
-    getData(){
-        let loginname = this.props.match.params.loginname || sessionStorage.getItem('loginname'); 
-        axios({
-            url:`https://cnodejs.org/api/v1/user/${loginname}`,
-            method:'get'
-        }).then((response)=>{
-            if(response.data.success === true){
-                let userData = response.data.data
-                this.setState({
-                    userData:response.data.data,
-                    recentReplies:userData.recent_replies,
-                    recentTopics:userData.recent_topics,
-                })
-            }
-        })
-    }
-    componentDidMount(){
-        this.getData();
-    }
-    render(){
-        const {userData,recentReplies,recentTopics} = this.state;
-        return (
+const UserList = (props) => {
+  const [ loginName, setLoginName ] = useState(props.loginname)
+  const [ userData, setUserData ] = useState([])
+  const [ recentReplies, setRecentReplies ] = useState([])
+  const [ recentTopics, setRecentTopics ] = useState([])
+
+  const getData = async () => {
+    const loginname = props.match.params.loginname || sessionStorage.getItem('loginname'); 
+    const { data } = await axios({
+      url: `https://cnodejs.org/api/v1/user/${loginname}`,
+    })
+    return data
+  }
+
+  useEffect(() => {
+    (async function () {
+      const { data } = await getData()
+      setUserData(data)
+      setRecentReplies(data.recent_replies)
+      setRecentTopics(data.recent_topics)
+    })()
+  }, [])
+
+          return (
             <div className="main">
                 <div className="main-left">
                     <div className="panel-header">主页 / </div>
@@ -75,7 +67,6 @@ class UserList extends Component{
                 </div>
             </div>
         )
-    }
 }
 
 export default UserList
