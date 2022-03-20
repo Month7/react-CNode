@@ -6,11 +6,11 @@ import {
     Link
 } from 'react-router-dom'
 
-const UserList = (props) => {
+const UserList = (props: any) => {
   const [ loginName, setLoginName ] = useState(props.loginname)
-  const [ userData, setUserData ] = useState([])
+  const [ userData, setUserData ] = useState<any>([])
   const [ recentReplies, setRecentReplies ] = useState([])
-  const [ recentTopics, setRecentTopics ] = useState([])
+  const [ recentTopics, setRecentTopics ] = useState<any>([])
 
   const getData = async () => {
     const loginname = props.match.params.loginname || sessionStorage.getItem('loginname'); 
@@ -40,7 +40,7 @@ const UserList = (props) => {
                     <div className="panel-header">
                         <div className="panel-title">最近创建的话题</div>
                         <div>
-                            {recentTopics.map((item)=>
+                            {recentTopics.map((item: any)=>
                             <div className="recentCell" key={item.id}>
                                 <img src={item.author.avatar_url} alt="头像" className="authorAcator"/>
                                 <span>{item.author.loginname}</span>
@@ -52,7 +52,7 @@ const UserList = (props) => {
                     <div className="panel-header">
                         <div className="panel-title">最近回复的话题</div>
                         <div>
-                            {recentReplies.map((item)=>
+                            {recentReplies.map((item: any)=>
                             <div className="recentCell" key={item.id}>
                                 <img src={item.author.avatar_url} alt="头像" className="authorAcator"/>
                                 <span>{item.author.loginname}</span>

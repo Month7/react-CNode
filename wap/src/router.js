@@ -5,7 +5,7 @@ import {
     Switch,
     Redirect
 } from 'react-router-dom';
-import Index from './pages/Index';
+import Index from './pages/Index.tsx';
 import Message from './pages/Message';
 import CFooter from './components/CFooter/CFooter';
 import Login from './components/Login/Login';
